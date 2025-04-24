@@ -1,6 +1,7 @@
 package com.axel.calculadoraimc;
 
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,11 +26,23 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultTxt;
     private AppDataBase db;
 
+=======
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+>>>>>>> 5d8a06ddf5dc1da69f7d59e5401fe68474267bb4
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 
         // Crear instancia de la base de datos
         db = Room.databaseBuilder(getApplicationContext(),
@@ -111,3 +124,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+=======
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+}
+>>>>>>> 5d8a06ddf5dc1da69f7d59e5401fe68474267bb4
